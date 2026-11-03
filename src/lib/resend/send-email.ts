@@ -1,5 +1,8 @@
 import { Resend } from "resend";
 
+// Remitente configurable: el dominio debe estar verificado en Resend.
+const DEFAULT_FROM = "Agendalo <notifications@wilrd14.dev>";
+
 function createResend() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -18,7 +21,7 @@ export async function sendEmail({ to, subject, html }: SendEmailParams) {
   try {
     const resend = createResend();
     const { data, error } = await resend.emails.send({
-      from: `Agendalo <notifications@agendalo.com>`,
+      from: process.env.EMAIL_FROM || DEFAULT_FROM,
       to,
       subject,
       html,

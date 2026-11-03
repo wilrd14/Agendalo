@@ -127,7 +127,7 @@ Cubre la conversión de moneda y generación de horarios, el cliente de PayPal (
 
 ```bash
 # 1. Clonar e instalar
-git clone https://github.com/willrd14/Agendalo.git
+git clone https://github.com/wilrd14/Agendalo.git
 cd Agendalo
 npm install
 
@@ -176,4 +176,4 @@ Abre [http://localhost:3000](http://localhost:3000).
 
 **Williams Villavizar**: desarrollador web · Santo Domingo, República Dominicana
 
-[Portafolio](https://wilrd14.dev) · [GitHub](https://github.com/willrd14) · [LinkedIn](https://www.linkedin.com/in/williams-rafael)
+[Portafolio](https://wilrd14.dev) · [GitHub](https://github.com/wilrd14) · [LinkedIn](https://www.linkedin.com/in/williams-rafael)

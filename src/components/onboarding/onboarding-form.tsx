@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SITE_HOST } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useSupabaseBrowser } from "@/lib/use-supabase-browser";
 import { Button } from "@/components/ui/button";
@@ -299,7 +300,7 @@ export default function OnboardingForm({
             <div>
               <Label className="mb-2 block">Tu URL pública</Label>
               <div className="flex items-center gap-2">
-                <span className="text-muted-foreground">agendalo.com/</span>
+                <span className="text-muted-foreground">{SITE_HOST}/</span>
                 <Input
                   value={slug}
                   onChange={(e) => setSlug(slugify(e.target.value))}
@@ -350,7 +351,7 @@ export default function OnboardingForm({
                 URL pública
               </p>
               <p className="text-emerald-600 font-medium">
-                agendalo.com/{slug}
+                {SITE_HOST}/{slug}
               </p>
             </div>
             <div className="border-t pt-3">

@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
+import { SITE_HOST } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -285,7 +286,7 @@ export default async function OverviewPage() {
                 target="_blank"
                 className="text-sm text-emerald-600 hover:underline break-all"
               >
-                agendalo.com/{business.slug}
+                {SITE_HOST}/{business.slug}
               </Link>
             </CardContent>
           </Card>

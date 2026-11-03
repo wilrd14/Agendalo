@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SITE_HOST } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -137,7 +138,7 @@ export default function DashboardLayout({
               target="_blank"
               className="flex items-center justify-between gap-2 px-3 py-2.5 bg-muted rounded-md text-xs text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <span className="truncate">agendalo.com/{business.slug}</span>
+              <span className="truncate">{SITE_HOST}/{business.slug}</span>
               <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-60 group-hover:opacity-100" />
             </Link>
           ) : (

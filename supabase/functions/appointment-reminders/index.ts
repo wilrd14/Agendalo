@@ -68,6 +68,7 @@ Deno.serve(async (req: Request) => {
     const resendApiKey = Deno.env.get("RESEND_API_KEY")!;
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://agendalo.com";
     const cronSecret = Deno.env.get("CRON_SECRET") ?? "";
+    const emailFrom = Deno.env.get("EMAIL_FROM") ?? "Agendalo <notifications@wilrd14.dev>";
 
     // Credenciales de Twilio (opcionales: si faltan, simplemente se omite
     // el envío por SMS/WhatsApp y solo se manda el recordatorio por email).
@@ -167,7 +168,7 @@ Deno.serve(async (req: Request) => {
         });
 
         const { error: emailError } = await resend.emails.send({
-          from: "Agendalo <notifications@agendalo.com>",
+          from: emailFrom,
           to: client.email,
           subject: `Recordatorio: tu cita mañana con ${business?.name ?? "nosotros"}`,
           html,
